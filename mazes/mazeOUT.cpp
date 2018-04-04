@@ -15,6 +15,7 @@ int main(int argc, char const *argv[]) {
 
 	string line;
 	vector<string> lines;
+	vector<vector<bool>> maze;
 	int i = 0;
 
 	while(getline(in, line)) {
@@ -22,7 +23,23 @@ int main(int argc, char const *argv[]) {
 		i++;
 	}
 
-	for(int x = 0; x <= i; x++){
+	for(int z = 0; z < i; z++){
+		int length = lines[z].length();
+
+		for(int y = 0; y < length; y++){
+			if(lines[z][y] == '#'){
+				maze[z][y] = true;
+			}else if(lines[z][y] == 'X') {
+				maze[z][y] = false;
+			}else if(lines[z][y] == '@') {
+				maze[z][y] = false;
+			}else if(lines[z][y] == ' ') {
+				maze[z][y] = false;
+			}
+		}
+	}
+
+	for(int x = 0; x < i; x++){
 		cout << lines[x] << endl;
 	}
 
