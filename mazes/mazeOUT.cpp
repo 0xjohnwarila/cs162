@@ -15,7 +15,6 @@ int main(int argc, char const *argv[]) {
 
 	string line;
 	vector<string> lines;
-	vector<vector<bool>> maze;
 	int i = 0;
 
 	while(getline(in, line)) {
@@ -28,20 +27,29 @@ int main(int argc, char const *argv[]) {
 
 		for(int y = 0; y < length; y++){
 			if(lines[z][y] == '#'){
-				maze[z][y] = true;
+				lines[z][y] = 'w';
 			}else if(lines[z][y] == 'X') {
-				maze[z][y] = false;
+				lines[z][y] = 'e';
 			}else if(lines[z][y] == '@') {
-				maze[z][y] = false;
+				lines[z][y] = 'p';
 			}else if(lines[z][y] == ' ') {
-				maze[z][y] = false;
+				lines[z][y] = 'n';
 			}
 		}
 	}
 
-	for(int x = 0; x < i; x++){
-		cout << lines[x] << endl;
-	}
 
 	return 0;
 }
+
+for(int x=0;x<n;x++)
+	if(lines[x][y]==0)
+	    map[x][y] = 0;
+	else if(lines[x][y]==1)
+	    map[x][y] = 1; //obstacle
+	else if(lines[x][y]==2)
+	    map[x][y] = 2; //start
+	else if(lines[x][y]==3)
+	    map[x][y] = 3; //route
+	else if(map[x][y]==4)
+	    map[x][y] = 4; //finish
