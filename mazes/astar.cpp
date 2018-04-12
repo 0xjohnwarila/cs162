@@ -8,8 +8,8 @@
 #include <fstream>
 using namespace std;
 
-const int n=60; // horizontal size of the map
-const int m=80; // vertical size size of the map
+const int n=30; // horizontal size of the map
+const int m=40; // vertical size size of the map
 static int map[n][m];
 static int closed_nodes_map[n][m]; // map of closed (tried-out) nodes
 static int open_nodes_map[n][m]; // map of open (not-yet-tried) nodes
@@ -258,10 +258,10 @@ int main(int argc, char const *argv[])
     // randomly select start and finish locations
     int xA, yA, xB, yB;
 
-    xA = 58;
-    yA = 24;
-    xB = 58;
-    yB = 17;
+    xA = 36;
+    yA = 1;
+    xB = 24;
+    yB = 34;
     
 
     cout<<"Map Size (X,Y): "<<n<<","<<m<<endl;
