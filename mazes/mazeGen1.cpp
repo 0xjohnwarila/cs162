@@ -88,15 +88,15 @@ int main(int argc, char const *argv[]) {
 		}
 		file << endl;
 		for(int x = 0; x < m; ++x) {
-			if (maze[y][x].west == true) 
+			if(maze[y][x].west == true) 
 				file << "0";
 			else 
 				file << "1";
-			if (maze[y][x].north == true || maze[y][x].east == true || maze[y][x].south == true || maze[y][x].west == true) 
+			if(maze[y][x].north == true || maze[y][x].east == true || maze[y][x].south == true || maze[y][x].west == true) 
 				file << "00";
 			else 
 				file << "11";
-			if (maze[y][x].east == true) 
+			if(maze[y][x].east == true) 
 				file << "0";
 			else 
 				file << "1";
@@ -104,7 +104,7 @@ int main(int argc, char const *argv[]) {
 		file << endl;
 		for(int x = 0; x < m; ++x) {
 			file << "1";
-			if (maze[y][x].south == true) file << "00";
+			if(maze[y][x].south == true) file << "00";
 			else file << "11";
 			file << "1";
 		}
