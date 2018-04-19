@@ -241,7 +241,7 @@ void recursiveBackTrack() {
                 }
         } while (currentY == randomStartY && currentX == randomStartX);
         
-        while(currentY != randomStartY && currentX != randomStartX) {
+        while(currentY != 0 && currentX != 0) {
                 int randDir = rand() % 4;
 
                 if(maze[currentY + 1][currentX].visited
@@ -286,9 +286,9 @@ void recursiveBackTrack() {
                                 }
                         }
                 }
-                clearScreen();
-                printMaze();
-                getchar();
+                //clearScreen();
+                //printMaze();
+                //getchar();
         }
         dumpMazeToFile();
 }
@@ -487,7 +487,7 @@ int main(int argc, char const *argv[])
         double time_elapsed = double(end - start);
         cout<<"Time to calculate the route (ms): "<<time_elapsed<<endl;
         cout<<"Route:"<<endl;
-        for(int i=0;i<=route.size();i++){
+        for(size_t i=0;i<=route.size();i++){
                 if(route[i]=='1')
                         cout<<"D";
                 else if(route[i]=='2')
@@ -505,7 +505,7 @@ int main(int argc, char const *argv[])
                 int x=xA;
                 int y=yA;
                 map[x][y]=2;
-                for(int i=0;i<route.length();i++) {
+                for(size_t i=0;i<route.length();i++) {
                         c =route.at(i);
                         j=c-'0'; 
                         x=x+dx[j];
